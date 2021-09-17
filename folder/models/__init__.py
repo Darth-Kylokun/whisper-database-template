@@ -10,3 +10,9 @@ class Users(__base__):
     uuid = Column(String, primary_key=True, nullable=False)
     username = Column(String, nullable=False, unique=True)
     email = Column(String, nullable=False, unique=True)
+
+    def __repr__(self) -> str:
+        return '<Users %r>' % self.username
+
+    def __str__(self) -> str:
+        return f"(uuid: {self.uuid}, username: {self.username}, email: {self.email})"
